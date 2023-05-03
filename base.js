@@ -29,9 +29,9 @@ if (localStorage.getItem("hasExecutedBMBase") == "true") { console.log("The book
     closeBtn.style.paddingRight = "15px";
     closeBtn.style.paddingTop = "7px";
     closeBtn.style.paddingBottom = "7px";
-    closeBtn.onClick = function() {
-        alert("test");
-    }
+    closeBtn.onclick = function() {
+        alert("hello gamer");
+    };
     
     document.body.appendChild(base);
     document.body.appendChild(closeBtn);
