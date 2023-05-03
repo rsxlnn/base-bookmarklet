@@ -1,7 +1,9 @@
-if (localStorage.getItem("hasExecutedBMBase") == "true") { 
-    console.log("The bookmarklet base has already been executed!");
-    alert("You've already executed the base!"); 
-} else {
+// HEY! Make sure to use this as the bookmark URL as it
+// provides automatic updates so you can use the most
+// up-to-date version of the bookmarklet base! :)
+// javascript:fetch("https://raw.githubusercontent.com/rsxlnn/base-bookmarklet/main/base.js").then(r%20=>%20r.text()).then(r%20=>%20eval(r));
+
+if (localStorage.getItem("hasExecutedBMBase") == "true") { console.log("The bookmarklet base has already been executed!"); alert("You've already executed the base!"); } else {
     console.log("Starting the bookmarklet base...");
     alert("Bookmarklet base by azaelreo\nUse freely with permission.");
     var base = document.createElement("div");
@@ -27,6 +29,9 @@ if (localStorage.getItem("hasExecutedBMBase") == "true") {
     closeBtn.style.paddingRight = "15px";
     closeBtn.style.paddingTop = "7px";
     closeBtn.style.paddingBottom = "7px";
+    closeBtn.onClick = function() {
+        alert("test");
+    }
     
     document.body.appendChild(base);
     document.body.appendChild(closeBtn);
