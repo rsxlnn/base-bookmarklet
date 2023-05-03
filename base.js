@@ -30,6 +30,7 @@ if (localStorage.getItem("hasExecutedBMBase") == "true") { console.log("The book
     closeBtn.style.paddingTop = "7px";
     closeBtn.style.paddingBottom = "7px";
     closeBtn.style.cursor = "pointer";
+    closeBtn.style.fontFamily = "Arial";
     closeBtn.onclick = function() {
         document.body.removeChild(base);
         document.body.removeChild(closeBtn);
