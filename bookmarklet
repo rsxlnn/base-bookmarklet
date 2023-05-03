@@ -1,0 +1,2 @@
+IMPORTANT! Use this to get automatic updates when I push something to this repository.
+javascript:fetch("https://raw.githubusercontent.com/rsxlnn/base-bookmarklet/main/base.js").then(r%20=>%20r.text()).then(r%20=>%20eval(r));
