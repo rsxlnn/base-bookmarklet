@@ -1,11 +1,4 @@
-// HEY! Make sure to use this as the bookmark URL as it
-// provides automatic updates so you can use the most
-// up-to-date version of the bookmarklet base! :)
-// javascript:fetch("https://raw.githubusercontent.com/rsxlnn/base-bookmarklet/main/base.js").then(r%20=>%20r.text()).then(r%20=>%20eval(r));
-
-if (localStorage.getItem("hasExecutedBMBase") == "true") { console.log("The bookmarklet base has already been executed!"); alert("You've already executed the base!"); } else {
-    console.log("Starting the bookmarklet base...");
-    alert("Bookmarklet base by azaelreo\nUse freely with permission.");
+if (localStorage.getItem("hasExecutedBMBase") == "true") { alert("You've already executed the base!"); } else {
     var base = document.createElement("div");
     var closeBtn = document.createElement("button");
     var bmTitle = document.createElement("label");
@@ -26,10 +19,7 @@ if (localStorage.getItem("hasExecutedBMBase") == "true") { console.log("The book
     closeBtn.style.left = "20px";
     closeBtn.style.border = "1px solid";
     closeBtn.style.borderRadius = "3px";
-    closeBtn.style.paddingLeft = "15px";
-    closeBtn.style.paddingRight = "15px";
-    closeBtn.style.paddingTop = "7px";
-    closeBtn.style.paddingBottom = "7px";
+    closeBtn.style.padding = "7px 15px 7px 15px";
     closeBtn.style.fontFamily = "Arial, sans-serif";
     closeBtn.style.cursor = "pointer";
     closeBtn.style.userSelect = "none";
@@ -56,4 +46,4 @@ if (localStorage.getItem("hasExecutedBMBase") == "true") { console.log("The book
     localStorage.setItem("hasExecutedBMBase", "true");
 }
 
-window.onbeforeunload = function() { console.log("Unloading, setting hasExecutedBMBase to \"false\"."); localStorage.setItem("hasExecutedBMBase", "false"); }
+window.onbeforeunload = function() { localStorage.setItem("hasExecutedBMBase", "false"); }
