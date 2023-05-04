@@ -1,49 +1,49 @@
-if (localStorage.getItem("hasExecutedBMBase") == "true") { alert("You've already executed the base!"); } else {
-    var base = document.createElement("div");
-    var closeBtn = document.createElement("button");
-    var bmTitle = document.createElement("label");
+if (localStorage.getItem("alreadyRanBase") == "true") { alert("You have already ran this bookmarklet!"); } else {
+    var baseBackground = document.createElement("div");
+    var closeButton = document.createElement("button");
+    var baseTitle = document.createElement("label");
     
-    base.style.position = "fixed";
-    base.style.left = "0%";
-    base.style.top = "0%";
-    base.style.zIndex = "100000";
-    base.style.width = "100%";
-    base.style.height = "100%";
-    base.style.backgroundColor = "rgb(220, 220, 220)";
+    baseBackground.style.position = "fixed";
+    baseBackground.style.left = "0%";
+    baseBackground.style.top = "0%";
+    baseBackground.style.zIndex = "100000";
+    baseBackground.style.width = "100%";
+    baseBackground.style.height = "100%";
+    baseBackground.style.backgroundColor = "rgb(220, 220, 220)";
     
-    closeBtn.textContent = "Close";
-    closeBtn.style.zIndex = "100001";
-    closeBtn.style.backgroundColor = "white";
-    closeBtn.style.position = "fixed";
-    closeBtn.style.bottom = "20px";
-    closeBtn.style.left = "20px";
-    closeBtn.style.border = "1px solid";
-    closeBtn.style.borderRadius = "3px";
-    closeBtn.style.padding = "7px 15px 7px 15px";
-    closeBtn.style.fontFamily = "Arial, sans-serif";
-    closeBtn.style.cursor = "pointer";
-    closeBtn.style.userSelect = "none";
-    closeBtn.onclick = function() {
-        document.body.removeChild(base);
-        document.body.removeChild(closeBtn);
-        document.body.removeChild(bmTitle);
-        localStorage.setItem("hasExecutedBMBase", "false");
+    closeButton.textContent = "Close";
+    closeButton.style.zIndex = "100001";
+    closeButton.style.backgroundColor = "white";
+    closeButton.style.position = "fixed";
+    closeButton.style.bottom = "20px";
+    closeButton.style.left = "20px";
+    closeButton.style.border = "1px solid";
+    closeButton.style.borderRadius = "3px";
+    closeButton.style.padding = "7px 15px 7px 15px";
+    closeButton.style.fontFamily = "Arial, sans-serif";
+    closeButton.style.cursor = "pointer";
+    closeButton.style.userSelect = "none";
+    closeButton.onclick = function() {
+        document.body.removeChild(baseBackground);
+        document.body.removeChild(closeButton);
+        document.body.removeChild(baseTitle);
+        localStorage.setItem("alreadyRanBase", "false");
     };
 
-    bmTitle.textContent = "Bookmarklet Base";
-    bmTitle.style.zIndex = "100002";
-    bmTitle.style.color = "black";
-    bmTitle.style.fontFamily = "Arial, sans-serif";
-    bmTitle.style.fontSize = "16px";
-    bmTitle.style.position = "fixed";
-    bmTitle.style.left = "15px";
-    bmTitle.style.top = "20px";
-    bmTitle.style.userSelect = "none";
+    baseTitle.textContent = "Bookmarklet Base";
+    baseTitle.style.zIndex = "100002";
+    baseTitle.style.color = "black";
+    baseTitle.style.fontFamily = "Arial, sans-serif";
+    baseTitle.style.fontSize = "16px";
+    baseTitle.style.position = "fixed";
+    baseTitle.style.left = "15px";
+    baseTitle.style.top = "20px";
+    baseTitle.style.userSelect = "none";
     
-    document.body.appendChild(base);
-    document.body.appendChild(closeBtn);
-    document.body.appendChild(bmTitle);
-    localStorage.setItem("hasExecutedBMBase", "true");
+    document.body.appendChild(baseBackground);
+    document.body.appendChild(closeButton);
+    document.body.appendChild(baseTitle);
+    localStorage.setItem("alreadyRanBase", "true");
 }
 
-window.onbeforeunload = function() { localStorage.setItem("hasExecutedBMBase", "false"); }
+window.onbeforeunload = function() { localStorage.setItem("alreadyRanBase", "false"); }
