@@ -8,6 +8,7 @@ if (localStorage.getItem("hasExecutedBMBase") == "true") { console.log("The book
     alert("Bookmarklet base by azaelreo\nUse freely with permission.");
     var base = document.createElement("div");
     var closeBtn = document.createElement("button");
+    var bmTitle = document.createElement("label");
     
     base.style.position = "fixed";
     base.style.left = "0%";
@@ -21,28 +22,38 @@ if (localStorage.getItem("hasExecutedBMBase") == "true") { console.log("The book
     closeBtn.style.zIndex = "100001";
     closeBtn.style.backgroundColor = "white";
     closeBtn.style.position = "fixed";
-    closeBtn.style.bottom = "2.5%";
-    closeBtn.style.left = "1.75%";
+    closeBtn.style.bottom = "20px";
+    closeBtn.style.left = "20px";
     closeBtn.style.border = "1px solid";
     closeBtn.style.borderRadius = "3px";
     closeBtn.style.paddingLeft = "15px";
     closeBtn.style.paddingRight = "15px";
     closeBtn.style.paddingTop = "7px";
     closeBtn.style.paddingBottom = "7px";
+    closeBtn.style.fontFamily = "Arial, sans-serif";
     closeBtn.style.cursor = "pointer";
-    closeBtn.style.fontFamily = "Arial";
+    closeBtn.style.userSelect = "none";
     closeBtn.onclick = function() {
         document.body.removeChild(base);
         document.body.removeChild(closeBtn);
+        document.body.removeChild(bmTitle);
         localStorage.setItem("hasExecutedBMBase", "false");
     };
+
+    bmTitle.textContent = "Bookmarklet Base";
+    bmTitle.style.zIndex = "100002";
+    bmTitle.style.color = "black";
+    bmTitle.style.fontFamily = "Arial, sans-serif";
+    bmTitle.style.fontSize = "16px";
+    bmTitle.style.position = "fixed";
+    bmTitle.style.left = "15px";
+    bmTitle.style.top = "20px";
+    bmTitle.style.userSelect = "none";
     
     document.body.appendChild(base);
     document.body.appendChild(closeBtn);
+    document.body.appendChild(bmTitle);
     localStorage.setItem("hasExecutedBMBase", "true");
 }
 
-window.onbeforeunload = function() {
-    console.log("Unloading, setting hasExecutedBMBase to \"false\".");
-    localStorage.setItem("hasExecutedBMBase", "false");
-}
+window.onbeforeunload = function() { console.log("Unloading, setting hasExecutedBMBase to \"false\"."); localStorage.setItem("hasExecutedBMBase", "false"); }
